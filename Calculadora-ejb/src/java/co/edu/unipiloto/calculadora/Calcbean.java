@@ -18,6 +18,19 @@ public class Calcbean implements CalcbeanLocal {
     public Integer suma(int a, int b) {
         return a+b;
     }
+    @Override
+    public Integer resta(int a, int b) {
+        return a-b;
+    }
+  
+    @Override
+    public Integer multiplicacion(int a, int b) {
+        return a*b;
+    }
+    @Override
+    public Double division(double a, double b) {
+        return a/b;
+    }
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

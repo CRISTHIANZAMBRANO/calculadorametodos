@@ -23,8 +23,6 @@ public class CalcServlet extends HttpServlet {
     @EJB
     private CalcbeanLocal calcbean;
 
-    
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -42,14 +40,26 @@ public class CalcServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CalcServlet</title>");            
+            out.println("<title>Servlet CalcServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            int a= Integer.parseInt(request.getParameter("t1"));
-            int b= Integer.parseInt(request.getParameter("t2"));
-            String st= request.getParameter("action");
-            int suma=calcbean.suma(a,b);
-            out.println("<h1>SUM= " +suma+ "accion"+st+"</h1>");
+            int a = Integer.parseInt(request.getParameter("t1"));
+            int b = Integer.parseInt(request.getParameter("t2"));
+            String st = request.getParameter("action");
+            double res=0;
+            if (st.equals("+")) {
+                res=(int)calcbean.suma(a, b);
+            }
+            else if(st.equals("-")){
+                res=(int)calcbean.resta(a, b);
+            }
+            else if(st.equals("*")){
+                res=(int)calcbean.multiplicacion(a, b);
+            }
+            else{
+                res=calcbean.division(a, b);
+            }
+            out.println("<h1>RESULTADO= "  +res+" "+ "accion" +" " +st + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -11,13 +11,29 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <style>
+            #contenedor{
+                
+                position: absolute;
+                left:380px;
+                
+            }
+            .boton{
+                width: 50px;
+                height: 50px;
+            }
+        </style>
         <div>TODO write content</div>
         <form action="./CalcServlet" method="POST">
             <input type="text" name="t1" value="" />
             <input type="text" name="t2" value="" />
-            <input type="submit" name="action" value="sumar" />
-            <p>
-                <input type="submit" name="action" value="Resta" /></p>
+            <div id="contenedor">
+            <input type="submit" name="action" value="+" class="boton" />
+            <input type="submit" name="action" value="-" class="boton" /><br>
+            <input type="submit" name="action" value="*" class="boton" />
+            <input type="submit" name="action" value="/" class="boton" />
+            </div>
+           
         </form>
     </body>
 </html>

@@ -15,5 +15,8 @@ import javax.ejb.Local;
 public interface CalcbeanLocal {
 
     Integer suma(int a, int b);
+    Integer resta(int a, int b);
+    Double division(double a, double b);
+    Integer multiplicacion(int a, int b);
     
 }
